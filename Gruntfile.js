@@ -338,6 +338,21 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+
+    buildcontrol: {
+      options: {
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+        dir: 'dist'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:ST-Team5/LiveBetterClient.git',
+          branch: 'gh-pages'
+        }
+      },
     }
   });
 
