@@ -1,21 +1,21 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: AddMealCtrl', function () {
 
   // load the controller's module
   beforeEach(module('lbClientApp'));
 
-  var MainCtrl,
+  var AddMealCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    AddMealCtrl = $controller('AddMealCtrl', {
       $scope: scope
     });
   }));
 
-  it('foo', function () {
+  it('bar', function () {
   });
 });

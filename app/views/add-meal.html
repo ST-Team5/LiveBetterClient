@@ -1,0 +1,19 @@
+<div ng-include src="'views/header.html'"></div>
+
+<div class="row marketing">
+	<select class="form-control"
+			style="width: 220px;"
+			ng-model="meal.food"
+			ng-options="item for item in foods"></select>
+
+	<div class="input-group"
+		 style="width: 220px;">
+		<input type="text" class="form-control"
+			   ng-model="meal.weight">
+		<span class="input-group-addon">.00</span>
+	</div>
+
+	<button type="button" class="btn btn-default">Submit</button>
+</div>
+
+<div ng-include src="'views/footer.html'"></div>
