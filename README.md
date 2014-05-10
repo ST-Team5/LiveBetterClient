@@ -28,7 +28,7 @@ You may use [the different goodies](https://github.com/yeoman/generator-angular)
 
 Deploy to GitHub pages
 ----------------------
-1. Verify that everything is OK. Commit and push all your changes.
+1. Verify that everything is OK (building the project with `grunt` passes, just seeing your changes with `grunt server` is **not** enough). Commit and push all your changes.
 1. Run `grunt buildcontrol:pages`. It will automatically push the changes to GitHub pages.
 1. Open https://st-team5.github.io/LiveBetterClient/ to verify that everything is OK there as well.
 
