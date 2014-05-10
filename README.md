@@ -22,6 +22,10 @@ Run `grunt serve` in a terminal
 
 Now open [http://localhost:9000/](http://localhost:9000/). Grunt will automatically watch for changes, so you just need to save your files and the server will reload.
 
+Add new views/routes/controllers/etc
+------------------------------------
+You may use [the different goodies](https://github.com/yeoman/generator-angular) provided by the Yeoman Angular generator. For example, ` yo angular:route foo` to add a route+view+controller named _foo_.
+
 Deploy to GitHub pages
 ----------------------
 1. Verify that everything is OK. Commit and push all your changes.
