@@ -14,6 +14,7 @@ Prepare your environment
 1. Install grunt globally: `npm install -g grunt grunt-cli`
 1. `cd` to the directory of this project
 1. Run `npm install` in the directory of this project to install all dependencies.
+1. (Optional, if something breaks later) Run `bower install`
 
 Run a local webserver for development
 -------------------------------------
