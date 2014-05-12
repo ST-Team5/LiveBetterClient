@@ -1,6 +1,8 @@
 LiveBetterClient
 ================
 
+[![Build Status](https://travis-ci.org/ST-Team5/LiveBetterClient.svg?branch=master)](https://travis-ci.org/ST-Team5/LiveBetterClient)
+
 The current build can be found at [https://st-team5.github.io/LiveBetterClient/](https://st-team5.github.io/LiveBetterClient/).
 
 How to
