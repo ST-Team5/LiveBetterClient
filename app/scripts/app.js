@@ -1,6 +1,6 @@
 'use strict';
 
-angular
+var liveBetterClient = angular
   .module('lbClientApp', [
     'ngCookies',
     'ngResource',
@@ -12,6 +12,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/add-activity', {
+        templateUrl: 'views/add-activity.html',
+        controller: 'AddActivityCtrl'
       })
       .otherwise({
         redirectTo: '/'
