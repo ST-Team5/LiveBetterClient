@@ -1,0 +1,56 @@
+<div ng-include src="'views/header.html'"></div>
+
+<div class="row marketing">
+    <div class="btn-group">
+        <button type="button"
+                class="btn btn-default"
+                ng-class="{active:isFood()}"
+                ng-click="selectFood()">
+            Food
+        </button>
+        <button type="button"
+                class="btn btn-default"
+                ng-class="{active:isBeverage()}"
+                ng-click="selectBeverage()">
+            Beverage
+        </button>
+
+        <div>(Per 100 <span ng-bind="quantityLabel()"></span>)</div>
+    </div>
+
+    <div class="input-group"
+         style="width: 220px;">
+        <input type="text" class="form-control"
+               ng-model="meal.weight"
+               placeholder="Calories (kcal)">
+        <span class="input-group-addon">.00</span>
+    </div>
+
+    <div class="input-group"
+         style="width: 220px;">
+        <input type="text" class="form-control"
+               ng-model="meal.weight"
+               placeholder="Carbohydrates (gr)">
+        <span class="input-group-addon">.00</span>
+    </div>
+
+    <div class="input-group"
+         style="width: 220px;">
+        <input type="text" class="form-control"
+               ng-model="meal.weight"
+               placeholder="Proteins (gr)">
+        <span class="input-group-addon">.00</span>
+    </div>
+
+    <div class="input-group"
+         style="width: 220px;">
+        <input type="text" class="form-control"
+               ng-model="meal.weight"
+               placeholder="Fats (gr)">
+        <span class="input-group-addon">.00</span>
+    </div>
+
+    <button type="button" class="btn btn-default">Submit</button>
+</div>
+
+<div ng-include src="'views/footer.html'"></div>

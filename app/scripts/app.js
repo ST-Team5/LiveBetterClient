@@ -13,6 +13,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/add-food', {
+        templateUrl: 'views/add-food.html',
+        controller: 'AddFoodCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
