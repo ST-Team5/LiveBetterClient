@@ -1,1 +1,0 @@
-"use strict";angular.module("lbClientApp",["ngCookies","ngResource","ngSanitize","ngRoute"]).config(["$routeProvider",function(a){a.when("/",{templateUrl:"views/main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]),angular.module("lbClientApp").controller("MainCtrl",function(){});
