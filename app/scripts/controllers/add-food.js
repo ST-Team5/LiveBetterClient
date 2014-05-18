@@ -1,30 +1,39 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('AddFoodCtrl', function ($scope, $controller) {
-    angular.extend(this, $controller('BaseCtrl', {$scope: $scope}));
+.controller('AddFoodCtrl', function ($scope, $controller) {
+  angular.extend(this, $controller('BaseCtrl', {$scope: $scope}));
 
-    $scope.item = {
-      type: 'food'
-    };
+  $scope.item = {
+    type: 'food'
+  };
 
-    $scope.isFood = function () {
-      return $scope.item.type === 'food';
-    };
+  $scope.isFood = function () {
+    return $scope.item.type === 'food';
+  };
 
-    $scope.isBeverage = function () {
-      return $scope.item.type === 'beverage';
-    };
+  $scope.isBeverage = function () {
+    return $scope.item.type === 'beverage';
+  };
 
-    $scope.selectFood = function () {
-      $scope.item.type = 'food';
-    };
+  $scope.selectFood = function () {
+    $scope.item.type = 'food';
+  };
 
-    $scope.selectBeverage = function () {
-      $scope.item.type = 'beverage';
-    };
+  $scope.selectBeverage = function () {
+    $scope.item.type = 'beverage';
+  };
 
-    $scope.quantityLabel = function () {
-      return $scope.item.type === 'food' ? 'grams' : 'milliliters';
-    };
-  });
+  $scope.quantityLabel = function () {
+    return $scope.item.type === 'food' ? 'grams' : 'milliliters';
+  };
+
+  $scope.isInputValid = function () {
+    var item = $scope.item;
+    return item.name &&
+             $.isNumeric(item.calories) &&
+             $.isNumeric(item.fats) &&
+             $.isNumeric(item.carbohydrates) &&
+             $.isNumeric(item.proteins);
+  };
+});

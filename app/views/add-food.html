@@ -57,7 +57,9 @@
         <span class="input-group-addon">.00</span>
     </div>
 
-    <button type="button" class="btn btn-default">Submit</button>
+    <button type="button"
+            class="btn btn-primary"
+            ng-disabled="!isInputValid()">Submit</button>
 </div>
 
 <div ng-include src="'views/footer.html'"></div>
