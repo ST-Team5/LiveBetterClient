@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('lbClientApp')
-		.controller('ActivityCtrl', function($scope, ActivityService){
+.controller('ActivityCtrl', function($scope, $controller, ActivityService){
+	angular.extend(this, $controller('BaseCtrl', {$scope: $scope}));
 
 	$scope.insertActivity = function(){
 		var name = $scope.newActivity.name;
