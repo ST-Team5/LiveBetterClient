@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lbClientApp')
-.controller('AddFoodCtrl', function ($scope, $controller) {
+.controller('AddFoodCtrl', function ($scope, $controller, AddFoodService) {
   angular.extend(this, $controller('BaseCtrl', {$scope: $scope}));
 
   $scope.item = {
@@ -35,5 +35,16 @@ angular.module('lbClientApp')
              $.isNumeric(item.fats) &&
              $.isNumeric(item.carbohydrates) &&
              $.isNumeric(item.proteins);
+  };
+
+  $scope.sendItem = function() {
+    var item = $scope.item;
+    if ($scope.isFood()) {
+      AddFoodService.addFood(item.name, item.calories,
+        item.carbohydrates, item.fats, item.proteins);
+    } else {
+      AddFoodService.addBeverage(item.name, item.calories,
+        item.carbohydrates, item.fats, item.proteins);
+    }
   };
 });

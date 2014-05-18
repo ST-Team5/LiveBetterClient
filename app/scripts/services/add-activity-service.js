@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('lbClientApp')
-	.service('ActivityService', function($http) {
-	
-	var baseServicesURL = 'http://localhost:8080';
-	
+	.service('ActivityService', function($http, SERVER_ADDRESS) {
+		
 	this.getAllActivities = function () {
 		
 	};
@@ -19,7 +17,7 @@ angular.module('lbClientApp')
 		
 		$http({
 			method: 'POST',
-			url: baseServicesURL + '/live-better/activities/insert-new-type',
+			url: SERVER_ADDRESS + 'activities/insert-new-type',
 			contentType: 'application/json',
 			data: JSON.stringify(activityToInsert)
 		}).

@@ -7,6 +7,7 @@ angular
   'ngSanitize',
   'ngRoute'
 ])
+.constant('SERVER_ADDRESS', 'http://62.44.100.18:8080/lb/')
 .config(function ($routeProvider) {
   $routeProvider
   .when('/', {
@@ -19,6 +20,10 @@ angular
   })
   .when('/add-food', {
     templateUrl: 'views/add-food.html',
+    controller: 'AddFoodCtrl'
+  })
+  .when('/add-beverage', {
+    templateUrl: 'views/add-beverage.html',
     controller: 'AddFoodCtrl'
   })
   .otherwise({
