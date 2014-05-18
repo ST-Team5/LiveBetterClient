@@ -23,10 +23,10 @@ angular.module('lbClientApp')
 			contentType: 'application/json',
 			data: JSON.stringify(activityToInsert)
 		}).
-		success(function(data, status, headers, config) {
+		success(function(data) {
 			console.log(status, data);
 		}).
-		error(function(data, status, headers, config) {
+		error(function(data) {
 		
 			console.log(data);
 		});

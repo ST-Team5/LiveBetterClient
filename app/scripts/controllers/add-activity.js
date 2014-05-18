@@ -13,5 +13,5 @@ angular.module('lbClientApp')
 		$scope.newActivity.name = '';
 		$scope.newActivity.type = '';
 		$scope.newActivity.calories = '';
-	}; 
+	};
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lbClientApp', [
-angular
+  angular
   .module('lbClientApp', [
     'ngCookies',
     'ngResource',
@@ -25,4 +25,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+]);
