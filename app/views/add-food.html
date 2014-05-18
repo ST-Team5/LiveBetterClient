@@ -1,21 +1,21 @@
 <div class="row marketing">
-	<div class="ht">
-			Adding new drink...
-	</div>
-	<div class="headers" 
-		style="width: 464px; height: 40px">
-		<h3>Details</h2>
-	</div>
+    <div class="ht">
+            Adding new drink...
+    </div>
+    <div class="headers" 
+        style="width: 464px; height: 40px">
+        <h3>Details</h2>
+    </div>
     <div class="input-group"
          style="width: 464px; height: 55px">
         <input type="text" class="form-control"
                ng-model="item.name"
                placeholder="Name">
     </div>
-	<div class="headers" 
-		 style="width: 464px; height: 40px">
-	<h3> Nutritional Values per 100ml</h3>
-	</div>
+    <div class="headers" 
+         style="width: 464px; height: 40px">
+    <h3> Nutritional Values per 100ml</h3>
+    </div>
     <div class="input-group"
          style="width: 464px; height: 55px">
 
@@ -48,10 +48,9 @@
                placeholder="Fats (gr)">
         <span class="input-group-addon">.00</span>
     </div>
-
-    <button type="button"
-            class="btn btn-primary"
-            ng-disabled="!isInputValid()">Done</button>
+    <br>
+    <button type="button" class="btn btn-default"
+            ng-disabled="{isInputValid()}">Done</button>
 </div>
 
 <div ng-include src="'footer.html'"></div>
