@@ -1,5 +1,6 @@
 'use strict';
 
+angular.module('lbClientApp', [
 angular
   .module('lbClientApp', [
     'ngCookies',
@@ -12,6 +13,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/add-new-activity-type', {
+        templateUrl: 'views/add-new-activity-type.html',
+        controller: 'ActivityCtrl'
       })
       .when('/add-food', {
         templateUrl: 'views/add-food.html',
