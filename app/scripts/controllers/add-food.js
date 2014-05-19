@@ -30,11 +30,20 @@ angular.module('lbClientApp')
 
   $scope.isInputValid = function () {
     var item = $scope.item;
+    var fatsNumeric = parseInt(item.fats);
+    var carbohydratesNumeric = parseInt(item.carbohydrates);
+    var proteinsNumeric = parseInt(item.proteins);
+
+    function isBetweenZeroAndHundred(value) {
+      return value >= 0 && value <= 100;
+    }
+
     return item.name &&
              $.isNumeric(item.calories) &&
-             $.isNumeric(item.fats) &&
-             $.isNumeric(item.carbohydrates) &&
-             $.isNumeric(item.proteins);
+             $.isNumeric(item.fats) && isBetweenZeroAndHundred(fatsNumeric) &&
+             $.isNumeric(item.carbohydrates) && isBetweenZeroAndHundred(carbohydratesNumeric) &&
+             $.isNumeric(item.proteins) && isBetweenZeroAndHundred(proteinsNumeric) &&
+             fatsNumeric + carbohydratesNumeric + proteinsNumeric <= 100;
   };
 
   $scope.sendItem = function() {
