@@ -52,8 +52,8 @@
     </div>
     <br>
     <button type="button" class="btn btn-default"
-            ng-disabled="{!isInputValid()}"
-            ng-click="{sendItem()}">Done</button>
+            ng-disabled="!isInputValid()"
+            ng-click="sendItem()">Done</button>
 </div>
 
 <div ng-include src="'views/footer.html'"></div>
