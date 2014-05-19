@@ -43,7 +43,7 @@ angular.module('lbClientApp')
     function clearItem() {
       $scope.item = {
         type: item.type
-      }
+      };
     }
 
     if ($scope.isFood()) {
