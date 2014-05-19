@@ -93,6 +93,7 @@ input, button {
 }
 
 .btn-default,
+.btn-default:disabled,
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
