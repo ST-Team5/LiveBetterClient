@@ -13,7 +13,7 @@ angular.module('lbClientApp')
       };
     }
 
-    this.addFood = function (name, calories, carbohydrates, fats, proteins) {
+    this.addFood = function (name, calories, carbohydrates, fats, proteins, successHandler) {
       var parameters = constructParameters(name, calories, carbohydrates, fats, proteins);
       $http({
         method: 'POST',
@@ -22,13 +22,14 @@ angular.module('lbClientApp')
         data: JSON.stringify(parameters)
       }).success(function (data) {
         console.log(data);
+        successHandler.call();
       }).
         error(function (data) {
           console.log(data);
         });
     };
 
-    this.addBeverage = function (name, calories, carbohydrates, fats, proteins) {
+    this.addBeverage = function (name, calories, carbohydrates, fats, proteins, successHandler) {
       var parameters = constructParameters(name, calories, carbohydrates, fats, proteins);
       $http({
         method: 'POST',
@@ -37,6 +38,7 @@ angular.module('lbClientApp')
         data: JSON.stringify(parameters)
       }).success(function (data) {
         console.log(data);
+        successHandler.call();
       }).
         error(function (data) {
           console.log(data);

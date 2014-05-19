@@ -39,12 +39,19 @@ angular.module('lbClientApp')
 
   $scope.sendItem = function() {
     var item = $scope.item;
+
+    function clearItem() {
+      $scope.item = {
+        type: item.type
+      }
+    }
+
     if ($scope.isFood()) {
       AddFoodService.addFood(item.name, item.calories,
-        item.carbohydrates, item.fats, item.proteins);
+        item.carbohydrates, item.fats, item.proteins, clearItem);
     } else {
       AddFoodService.addBeverage(item.name, item.calories,
-        item.carbohydrates, item.fats, item.proteins);
+        item.carbohydrates, item.fats, item.proteins, clearItem);
     }
   };
 });
