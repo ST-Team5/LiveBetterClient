@@ -125,3 +125,7 @@ height: 55px";
 .input-group {
 padding-left: 16px;
 }
+
+.nav-pills > li.active > a {
+	background-color: #6FAE2B;
+}
