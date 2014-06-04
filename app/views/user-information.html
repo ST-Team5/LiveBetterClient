@@ -1,0 +1,41 @@
+<div ng-include src="'views/header.html'"></div>
+<div class="row marketing">
+	<div class="ht">
+            Edit user information:
+    </div>
+    <br />
+    <form role="form" class="col-md-10">
+		<div class="input-group">
+		  <input id="person-age" ng-model="personAge" type="number" min="0" max="120" class="form-control" placeholder="Age...">
+		  <span class="input-group-addon">.00</span>
+		</div>
+
+		<div class="input-group">
+		  <input id="person-height" ng-model="personHeight" type="number" min="0" max="250" class="form-control" placeholder="Height...">
+		  <span class="input-group-addon">.cm</span>
+		</div>
+
+		<div class="input-group">
+		  <input id="person-weight" ng-model="personWeight" type="number" min="0" max="200" class="form-control" placeholder="Weight...">
+		  <span class="input-group-addon">.kg</span>
+		</div>
+
+		<div class="input-group">
+			Metabolism:
+		  <select id="person-metabolism" class="form-control">
+		  	<option selected value="0"> Choose</option>
+			  <option value="1">Slow</option>
+			  <option value="2">Fast</option>
+			  <option value="3">Mixed</option>
+		</select>
+		</div>
+
+
+	</form>
+	</div>
+			<button type="button"  id="submit-user-info" class="btn btn-default" 
+ng-disabled="!personAge || !personHeight || !personWeight || !personMetabolism" 
+>Done</button>
+</div>
+
+<div ng-include src="'views/footer.html'"></div>

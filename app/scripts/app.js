@@ -26,6 +26,10 @@ angular
     templateUrl: 'views/add-beverage.html',
     controller: 'AddFoodCtrl'
   })
+  .when('/user-information', {
+    templateUrl: 'views/user-information.html',
+    controller: 'UserInfomationCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
