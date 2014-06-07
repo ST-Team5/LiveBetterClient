@@ -5,8 +5,16 @@
     <tabset>
         <tab heading="Recent"
              select="recentSelected()">
-            <div ng-repeat="item in recent">
-                <input type="checkbox" name="item" ng-model="item.selected" ng-change="invalidateInput()">{{item.name}}</input>
+            <div class="select-dialog-checkbox-holder"
+                 ng-repeat="item in recent">
+                <input id="{{'checkbox' + item.name}}"
+                       class="css-checkbox select-dialog-checkbox"
+                       type="checkbox"
+                       name="item"
+                       ng-model="item.selected"
+                       ng-change="invalidateInput()"/>
+                <label class="css-label select-dialog-label"
+                       for="{{'checkbox' + item.name}}">{{item.name}}</label>
             </div>
         </tab>
         <tab heading="Frequent"
