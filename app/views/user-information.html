@@ -1,40 +1,96 @@
 <div ng-include src="'views/header.html'"></div>
 <div class="row marketing">
 	<div class="ht">
-            Edit user information:
-    </div>
-    <br />
-    <form role="form" class="col-md-10">
-		<div class="input-group">
-		  <input id="person-age" ng-model="personAge" type="number" min="0" max="120" class="form-control" placeholder="Age...">
-		  <span class="input-group-addon">.00</span>
-		</div>
-
-		<div class="input-group">
-		  <input id="person-height" ng-model="personHeight" type="number" min="0" max="250" class="form-control" placeholder="Height...">
-		  <span class="input-group-addon">.cm</span>
-		</div>
-
-		<div class="input-group">
-		  <input id="person-weight" ng-model="personWeight" type="number" min="0" max="200" class="form-control" placeholder="Weight...">
-		  <span class="input-group-addon">.kg</span>
-		</div>
-
-		<div class="input-group">
-			Metabolism:
-		  <select id="person-metabolism" class="form-control">
-		  	<option selected value="0"> Choose</option>
-			  <option value="1">Slow</option>
-			  <option value="2">Fast</option>
-			  <option value="3">Mixed</option>
-		</select>
-		</div>
-
-
-	</form>
+		Set personal details:
 	</div>
-			<button type="button"  id="submit-user-info" class="btn btn-default" 
-ng-disabled="!personAge || !personHeight || !personWeight || !personMetabolism" 
+	<br />
+	<form role="form" class="col-md-10">
+		<div class="row">
+			<div class="col-xs-6"> 
+				<select id="person-sex" ng-model="personSex" class="form-control">
+					<option selected value="0">Sex</option>
+					<option value="1">Female</option>
+					<option value="2">Male</option>
+				</select>
+			</div>
+			<div class="col-xs-6"> 
+				<div class="input-group ">
+					<input id="person-age" ng-model="personAge" type="number" min="0" max="120" class="form-control" placeholder="Age...">
+					<span class="input-group-addon">.00</span>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">	
+			<div class="col-xs-6"> 
+				<div class="input-group">
+					<input id="person-height" ng-model="personHeight" type="number" min="0" max="250" class="form-control" placeholder="Height...">
+					<span class="input-group-addon">.cm</span>
+				</div>
+			</div>
+			<div class="col-xs-6"> 
+				<div class="input-group">
+					<input id="person-weight" ng-model="personWeight" type="number" min="0" max="200" class="form-control" placeholder="Weight...">
+					<span class="input-group-addon">.kg</span>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+
+			
+		</div>
+		<div class="row">
+			<p> Set goal: <p>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="input-group">
+					<select id="person-goal" ng-model="personGoal" class="form-control">
+						<option value="0"> Maintain Weight</option>
+						<option value="1">Lose weight</option>
+						<option value="2">Gain weight</option>
+					</select>
+				</div>
+			</div>
+			<div ng-show="personGoal" class="col-xs-6"> 
+				<div class="input-group">
+					<select id="person-metabolism" ng-model="personMetabolism" class="form-control">
+						<option selected value="0">Metabolism</option>
+						<option value="1.2">Slow</option>
+						<option value="1.7">Fast</option>
+						<option value="1.5">Mixed</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">	
+			<div ng-show="personGoal">
+				<div class="col-xs-4">
+					<input  id="person-goal-days" ng-model="personGoalDays" type="number" min="0" max="250" class="form-control" placeholder="Days">
+				</div><div class="col-xs-4">
+				<input  id="person-goal-kg" ng-model="personGoalKG" type="number" min="0" max="250" class="form-control" placeholder="Kilos">
+			</div>
+
+		</div>
+	</div>
+	<div ng-show="(personSex && personAge && personHeight && personWeight && !personGoal) && calculateCaloriesPerDay()"  class="row">
+		<div class="col-xs-12">
+			You have to take {{ personCalories }} calories per day.
+		</div>
+	</div>
+<div ng-show="(personSex && personAge && personHeight && personWeight && personGoal && personMetabolism && personGoalDays && personGoalKG) && calculateCaloriesPerDay()"  class="row">
+		<div class="col-xs-12">
+			You have to take {{ personCalories }} calories per day.
+		</div>
+	</div>
+
+</div>
+</form>
+</div>
+<button type="button"  id="submit-user-info" class="btn btn-default" 
+ng-disabled="!personSex || !personAge || !personHeight || !personWeight || !personMetabolism" 
 >Done</button>
 </div>
 
