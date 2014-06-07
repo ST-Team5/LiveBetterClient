@@ -1,0 +1,21 @@
+<tabset ng-init="recentSelected()">
+    <tab heading="Recent"
+         select="recentSelected()">
+        <div ng-include src="'views/select-view-tab.html'"></div>
+    </tab>
+    <tab heading="Frequent"
+         select="frequentSelected()">
+        <div ng-include src="'views/select-view-tab.html'"></div>
+    </tab>
+    <tab heading="All"
+         select="allSelected()">
+        <div ng-include src="'views/select-view-tab.html'"></div>
+    </tab>
+</tabset>
+
+<button type="button"
+        class="btn btn-default"
+        ng-disabled="!isInputValid"
+        ng-click="send()">
+    Done
+</button>
