@@ -56,7 +56,7 @@ angular
         resolve: {
           'GetActivitiesServiceData': ['GetActivitiesService',
             function(GetActivitiesService) {
-              return GetActivitiesService.getAll()
+              return GetActivitiesService.getAll();
             }
           ]
         }
