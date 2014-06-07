@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('SelectFoodCtrl', function () {
-});
+  .controller('SelectFoodCtrl', function ($scope) {
+    $scope.bla = 'bla';
+  });
