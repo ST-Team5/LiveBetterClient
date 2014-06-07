@@ -5,7 +5,8 @@ angular
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 .constant('SERVER_ADDRESS', 'http://62.44.100.18:8080/lb/')
 .config(function ($routeProvider) {
@@ -25,6 +26,18 @@ angular
   .when('/add-beverage', {
     templateUrl: 'views/add-beverage.html',
     controller: 'AddFoodCtrl'
+  })
+  .when('/select-food', {
+    templateUrl: 'views/select-food.html',
+    controller: 'SelectFoodCtrl'
+  })
+  .when('/select-drink', {
+    templateUrl: 'views/select-drink.html',
+    controller: 'SelectDrinkCtrl'
+  })
+  .when('/select-activity', {
+    templateUrl: 'views/select-activity.html',
+    controller: 'SelectActivityCtrl'
   })
   .otherwise({
     redirectTo: '/'
