@@ -10,7 +10,7 @@ angular
   ])
   .constant('SERVER_ADDRESS', 'http://62.44.100.18:8080/lb/')
   .constant('CURRENT_USER_ID', 1)
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -32,31 +32,36 @@ angular
         templateUrl: 'views/select-food.html',
         controller: 'SelectFoodCtrl',
         resolve: {
-          'GetFoodServiceData': function (GetFoodService) {
-            return GetFoodService.getAll();
-          }
+          'GetFoodServiceData': ['GetFoodService',
+            function(GetFoodService) {
+              return GetFoodService.getAll();
+            }
+          ]
         }
       })
       .when('/select-drink', {
         templateUrl: 'views/select-drink.html',
         controller: 'SelectDrinkCtrl',
         resolve: {
-          'GetDrinksServiceData': function (GetDrinksService) {
-            return GetDrinksService.getAll();
-          }
+          'GetDrinksServiceData': ['GetDrinksService',
+            function(GetDrinksService) {
+              return GetDrinksService.getAll();
+            }
+          ]
         }
       })
       .when('/select-activity', {
         templateUrl: 'views/select-activity.html',
         controller: 'SelectActivityCtrl',
         resolve: {
-          'GetActivitiesServiceData': function (GetActivitiesService) {
-            return GetActivitiesService.getAll();
-          }
+          'GetActivitiesServiceData': ['GetActivitiesService',
+            function(GetActivitiesService) {
+              return GetActivitiesService.getAll()
+            }
+          ]
         }
       })
       .otherwise({
         redirectTo: '/'
       });
   });
-
