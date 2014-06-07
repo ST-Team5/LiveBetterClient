@@ -25,9 +25,8 @@ angular.module('lbClientApp')
           console.log(status, data);
         }).
         error(function (data) {
-
           console.log(data);
-		  handleUserError(data);
+		      handleUserError(data);
         });
     };
   });

@@ -21,6 +21,8 @@
   "smarttabs": true,
   "globals": {
     "angular": false,
-    "_": true
+    "_": true,
+    "handleUserError": true,
+    "SERVER_ADDRESS": true
   }
 }

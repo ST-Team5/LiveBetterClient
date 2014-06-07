@@ -26,7 +26,7 @@ angular.module('lbClientApp')
       }).
         error(function (data) {
           console.log(data);
-		  handleUserError(data);
+		      handleUserError(data);
         });
     };
 
@@ -43,7 +43,7 @@ angular.module('lbClientApp')
       }).
         error(function (data) {
           console.log(data);
-		  handleUserError(data);
+		      handleUserError(data);
         });
     };
   });

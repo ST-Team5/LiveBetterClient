@@ -1,4 +1,5 @@
 'use strict';
+/* jshint ignore:start */
 
 /**
  * AUTHORIZE
@@ -29,3 +30,5 @@ function handleError(data, $rootScope){
 function authenticate() {
 	window.open(SERVER_ADDRESS + "login.jsp", '_self');
 }
+
+/* jshint ignore:end */
