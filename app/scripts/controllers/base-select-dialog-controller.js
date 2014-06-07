@@ -49,7 +49,15 @@ angular.module('lbClientApp')
     };
 
     $scope.doneButtonHandler = function () {
-      $scope.send('abc');
+      $scope.send(
+        _.chain($scope.selectedProvider)
+          .filter(function (item) {
+            return item.selected;
+          })
+          .map(function (item) {
+            return item.data;
+          })
+          .value());
     };
 
     $scope.$watch('selectedProvider', $scope.invalidateInput());

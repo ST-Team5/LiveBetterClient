@@ -9,6 +9,7 @@ angular
     'ui.bootstrap'
   ])
   .constant('SERVER_ADDRESS', 'http://62.44.100.18:8080/lb/')
+  .constant('CURRENT_USER_ID', 1)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

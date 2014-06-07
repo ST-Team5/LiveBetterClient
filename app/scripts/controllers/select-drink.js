@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('SelectDrinkCtrl', function ($scope, $controller, GetDrinksServiceData) {
+  .controller('SelectDrinkCtrl', function ($scope, $controller, GetDrinksServiceData, SelectDrinksService) {
     angular.extend(this, $controller('BaseSelectCtrl', {$scope: $scope}));
 
     this.initialize(GetDrinksServiceData);
 
-    this.send = function () {
-      console.log('send drink!');
+    $scope.send = function (selectedDrinks) {
+      SelectDrinksService.selectDrinks(selectedDrinks);
     };
   });
