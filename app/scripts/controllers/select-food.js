@@ -33,6 +33,6 @@ angular.module('lbClientApp')
     ];
 
     $scope.send = function () {
-      console.log("send food!");
+      console.log('send food!');
     };
   });

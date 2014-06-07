@@ -49,6 +49,6 @@ angular.module('lbClientApp')
     ];
 
     $scope.send = function () {
-      console.log("send drink!");
+      console.log('send drink!');
     };
   });
