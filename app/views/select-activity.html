@@ -1,18 +1,26 @@
 <div ng-include src="'views/header.html'"></div>
-<tabset>
-	<tab heading="Recent"
-	     select="recentSelected()">
-		<div ng-repeat="item in recent">
-			<input type="checkbox" name="item" value="{{item.selected}}">{{item.name}}</input>
-		</div>
-	</tab>
-	<tab heading="Frequent"
-	     select="frequentSelected()"></tab>
-	<tab heading="All"
-	     select="allSelected()"></tab>
-</tabset>
-<button type="button"
-        class="btn btn-default"
-        ng-disabled="{!isInputValid()}"
-        ng-click="{send()}">Done</button>
+
+<div class="row marketing"
+     ng-init="recentSelected()">
+    <tabset>
+        <tab heading="Recent"
+             select="recentSelected()">
+            <div ng-repeat="item in recent">
+                <input type="checkbox" name="item" ng-model="item.selected" ng-change="invalidateInput()">{{item.name}}</input>
+            </div>
+        </tab>
+        <tab heading="Frequent"
+             select="frequentSelected()"></tab>
+        <tab heading="All"
+             select="allSelected()"></tab>
+    </tabset>
+
+    <button type="button"
+            class="btn btn-default"
+            ng-disabled="!isInputValid"
+            ng-click="send()">
+        Done
+    </button>
+</div>
+
 <div ng-include src="'views/footer.html'"></div>

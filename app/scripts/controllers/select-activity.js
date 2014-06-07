@@ -2,6 +2,7 @@
 
 angular.module('lbClientApp')
   .controller('SelectActivityCtrl', function ($scope) {
+    $scope.isInputValid = true;
     $scope.recent = [
       {
         name: 'Cycling',
@@ -31,13 +32,23 @@ angular.module('lbClientApp')
       $scope.selectedProvider = $scope.all;
     };
 
-    $scope.isInputValid = function () {
+    $scope.invalidateInput = function () {
       var provider = $scope.selectedProvider;
+      if (!provider) {
+        $scope.isInputValid = false;
+        return;
+      }
       for (var i = 0; i < provider.length; i++) {
         if (provider[i].selected) {
-          return true;
+          $scope.isInputValid = true;
+          return;
         }
       }
-      return false;
+      $scope.isInputValid = false;
+    };
+
+    $scope.$watch('selectedProvider', $scope.invalidateInput());
+
+    $scope.send = function () {
     };
   });
