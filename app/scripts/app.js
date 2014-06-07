@@ -28,8 +28,13 @@ angular
     controller: 'AddFoodCtrl'
   })
   .when('/select-food', {
-    templateUrl: 'views/select-food.html',
-    controller: 'SelectFoodCtrl'
+      templateUrl: 'views/select-food.html',
+      controller: 'SelectFoodCtrl',
+      resolve: {
+        'GetFoodServiceData': function (GetFoodService) {
+          return GetFoodService.getAll();
+        }
+      }
   })
   .when('/select-drink', {
     templateUrl: 'views/select-drink.html',
@@ -43,3 +48,4 @@ angular
     redirectTo: '/'
   });
 });
+
