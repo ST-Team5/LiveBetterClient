@@ -16,6 +16,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -37,6 +38,7 @@ body {
     max-width: 730px;
   }
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -46,6 +48,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
@@ -55,6 +58,7 @@ body {
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
@@ -68,10 +72,12 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
@@ -80,12 +86,14 @@ body {
 
 /* Temporary changes */
 input, button {
--moz-border-radius: 0px;
--webkit-border-radius: 0px;
-border-radius: 0px;
-height: 55px";
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  height: 55px;
 }
+
 .btn-default,
+.btn-default:disabled,
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
@@ -94,7 +102,7 @@ height: 55px";
   color: #333333;
   background-color: #ebebeb;
   border-color: #adadad;
-  background-color:#4A4A4A;
+  background-color: #4A4A4A;
   color: #FFFFFF;
   border-radius: 0px;
   width: 480px;
@@ -104,6 +112,7 @@ height: 55px";
   webkit-border-radius: 0px;
   border-radius: 0px;
 }
+
 .ht {
   background-color: #6FAE2B;
   width: 480px;
@@ -113,17 +122,20 @@ height: 55px";
   vertical-align: middle;
   padding-left: 16px;
   font-size: 32px;
-  
+
 }
+
 .form-control {
   height: 55px;
 }
+
 .headers {
-		 padding-left: 16px;
-		 padding-bottom: 0px;
-		 }
+  padding-left: 16px;
+  padding-bottom: 0px;
+}
+
 .input-group {
-padding-left: 16px;
+  padding-left: 16px;
 }
 
 .nav-tabs > li > a {
@@ -137,5 +149,8 @@ padding-left: 16px;
 }
 
 .tab-contents {
+}
 
+.nav-pills > li.active > a {
+  background-color: #6FAE2B;
 }

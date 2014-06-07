@@ -2,58 +2,15 @@
 <div class="row marketing"
      ng-init="selectBeverage()">
     <div class="ht">
-            Adding new drink...
+            Add new drink
     </div>
-    <div class="headers" 
+    <div class="headers"
         style="width: 464px; height: 40px">
         <h3>Details</h3>
     </div>
-    <div class="input-group"
-         style="width: 464px; height: 55px">
-        <input type="text" class="form-control"
-               ng-model="item.name"
-               placeholder="Name">
-    </div>
-    <div class="headers" 
-         style="width: 464px; height: 40px">
-    <h3> Nutritional Values per 100ml</h3>
-    </div>
-    <div class="input-group"
-         style="width: 464px; height: 55px">
-
-        <input type="text" class="form-control"
-               ng-model="item.calories"
-               placeholder="Calories (kcal)">
-        <span class="input-group-addon">.00</span>
-    </div>
-
-    <div class="input-group"
-         style="width: 464px; height: 55px">
-        <input type="text" class="form-control" 
-               ng-model="item.carbohydrates"
-               placeholder="Carbohydrates (gr)">
-        <span class="input-group-addon">.00</span>
-    </div>
-
-    <div class="input-group"
-         style="width: 464px; height: 55px">
-        <input type="text" class="form-control"
-               ng-model="item.proteins"
-               placeholder="Proteins (gr)">
-        <span class="input-group-addon">.00</span>
-    </div>
-
-    <div class="input-group"
-         style="width: 464px; height: 55px">
-        <input type="text" class="form-control"
-               ng-model="item.fats"
-               placeholder="Fats (gr)">
-        <span class="input-group-addon">.00</span>
-    </div>
-    <br>
-    <button type="button" class="btn btn-default"
-            ng-disabled="{!isInputValid()}"
-            ng-click="{sendItem()}">Done</button>
+    <div ng-include
+         ng-init="suffix = 'ml'"
+         src="'views/add-food-beverage-form.html'"></div>
 </div>
 
 <div ng-include src="'views/footer.html'"></div>
