@@ -4,6 +4,18 @@ angular.module('lbClientApp')
   .controller('BaseSelectCtrl', function ($scope, $controller) {
     angular.extend(this, $controller('BaseCtrl', {$scope: $scope}));
 
+    this.initialize = function (contents) {
+      $scope.all = $scope.frequent = $scope.recent = _.map(
+        contents,
+        function (rawItem) {
+          var result = {
+            selected: false,
+            data: rawItem
+          };
+          return  result;
+        });
+    };
+
     $scope.isInputValid = false;
     $scope.recent = [];
     $scope.all = [];
@@ -34,6 +46,10 @@ angular.module('lbClientApp')
         }
       }
       $scope.isInputValid = false;
+    };
+
+    $scope.doneButtonHandler = function () {
+      $scope.send('abc');
     };
 
     $scope.$watch('selectedProvider', $scope.invalidateInput());

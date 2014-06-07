@@ -1,54 +1,12 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('SelectDrinkCtrl', function ($scope, $controller) {
+  .controller('SelectDrinkCtrl', function ($scope, $controller, GetDrinksServiceData) {
     angular.extend(this, $controller('BaseSelectCtrl', {$scope: $scope}));
 
-    $scope.recent = [
-      {
-        name: 'Boza',
-        selected: false
-      },
-      {
-        name: 'Sok',
-        selected: false
-      },
-      {
-        name: 'Rakia',
-        selected: false
-      }
-    ];
-    $scope.all = [
-      {
-        name: 'Boza',
-        selected: false
-      },
-      {
-        name: 'Beer',
-        selected: false
-      },
-      {
-        name: 'Rakia',
-        selected: false
-      },
-      {
-        name: 'Coffee',
-        selected: false
-      }
-    ];
+    this.initialize(GetDrinksServiceData);
 
-    $scope.frequent = [
-      {
-        name: 'Boza',
-        selected: false
-      },
-      {
-        name: 'Sok',
-        selected: false
-      }
-    ];
-
-    $scope.send = function () {
+    this.send = function () {
       console.log('send drink!');
     };
   });

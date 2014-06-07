@@ -1,11 +1,11 @@
 <div class="select-dialog-checkbox-holder"
      ng-repeat="item in selectedProvider">
-    <input id="{{'checkbox' + item.name}}"
+    <input id="{{'checkbox' + item.data.id}}"
            class="css-checkbox select-dialog-checkbox"
            type="checkbox"
            name="item"
            ng-model="item.selected"
            ng-change="invalidateInput()"/>
     <label class="css-label select-dialog-label"
-           for="{{'checkbox' + item.name}}">{{item.name}}</label>
+           for="{{'checkbox' + item.data.id}}">{{item.data.name}}</label>
 </div>
