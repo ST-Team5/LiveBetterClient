@@ -28,6 +28,10 @@ angular
         templateUrl: 'views/add-beverage.html',
         controller: 'AddFoodCtrl'
       })
+      .when('/user-information', {
+    	templateUrl: 'views/user-information.html',
+   	controller: 'UserInfomationCtrl'
+  	})
       .when('/select-food', {
         templateUrl: 'views/select-food.html',
         controller: 'SelectFoodCtrl',
