@@ -86,7 +86,7 @@
 
 		</div>
 	</div>
-	<div ng-show="(personSex &&  personHeight && personBornDate != '' && personWeight && !personGoal) && calculateCaloriesPerDay()"  class="row">
+	<div ng-show="(personSex &&  personHeight && personBornDate != '' && personWeight && personGoal == 0) && calculateCaloriesPerDay()"  class="row">
 		<div class="col-xs-12">
 			You have to take {{ personCalories }} calories per day.
 		</div>
@@ -107,7 +107,7 @@
 <button ng-show="!personGoal" type="button" ng-click="submitUserDetails()" id="submit-user-info" class="btn btn-default" 
 ng-disabled="!firstName || !middleName || !lastName || !personSex || personBornDate == '' || personBornDate == 'mm/dd/yyyy' || !personWeight || !personWeight">Done</button>
 </div>
-<button ng-show="personGoal" type="button" ng-click="submitUserDetails()" id="submit-user-info" class="btn btn-default" 
+<button ng-show="personGoal" type="button" ng-click="submitUserDetails()" id="submit-user-info2" class="btn btn-default" 
 ng-disabled="!personMetabolism || goalDate == '' || goalDate == 'mm/dd/yyyy' || !personGoalKG">Done</button>
 </div>
 
