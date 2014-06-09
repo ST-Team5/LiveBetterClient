@@ -29,9 +29,9 @@ angular
         controller: 'AddFoodCtrl'
       })
       .when('/user-information', {
-    	templateUrl: 'views/user-information.html',
-   	controller: 'UserInfomationCtrl'
-  	})
+        templateUrl: 'views/user-information.html',
+        controller: 'UserInfomationCtrl'
+      })
       .when('/select-food', {
         templateUrl: 'views/select-food.html',
         controller: 'SelectFoodCtrl',
