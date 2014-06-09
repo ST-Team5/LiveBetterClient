@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .service('SelectDrinksService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID, successHandler) {
-    this.selectDrinks = function (drinks) {
+  .service('SelectDrinksService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID) {
+    this.selectDrinks = function (drinks, successHandler) {
       var drinksIds = _.map(drinks, function(drink) {
         return drink.id;
       });
