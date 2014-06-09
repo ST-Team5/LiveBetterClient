@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .service('GetDrinksService', function ($http, SERVER_ADDRESS, $q) {
+  .service('GetDrinksService', function ($http, SERVER_ADDRESS, $q, CURRENT_USER_ID) {
     this.getAll = function() {
       var deferred = $q.defer();
       var result = {};
@@ -19,13 +19,13 @@ angular.module('lbClientApp')
         notifyIfReady();
       });
 
-      $http.get(SERVER_ADDRESS + 'drinks/list').success(function(data) {
+      $http.get(SERVER_ADDRESS + 'drinks/list/recent' + CURRENT_USER_ID).success(function(data) {
         counter++;
         result.recent = data;
         notifyIfReady();
       });
 
-      $http.get(SERVER_ADDRESS + 'drinks/list').success(function(data) {
+      $http.get(SERVER_ADDRESS + 'drinks/list/frequent' + CURRENT_USER_ID).success(function(data) {
         counter++;
         result.frequent = data;
         notifyIfReady();
