@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .service('GetFoodService', function ($http, SERVER_ADDRESS, $q) {
+  .service('GetFoodService', function ($http, SERVER_ADDRESS, $q, CURRENT_USER_ID) {
     this.getAll = function() {
       var deferred = $q.defer();
       var result = {};
