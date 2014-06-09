@@ -2,7 +2,7 @@
 
 angular.module('lbClientApp')
   .service('SelectActivitiesService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID) {
-    this.selectActivities = function (activities) {
+    this.selectActivities = function (activities, successHandler) {
       var activityIds = _.map(activities, function(activity) {
         return activity.id;
       });
@@ -13,6 +13,9 @@ angular.module('lbClientApp')
         data: JSON.stringify(activityIds)
       }).
         success(function (data) {
+          if (successHandler) {
+            successHandler.call();
+          }
           console.log(status, data);
         }).
         error(function (data) {

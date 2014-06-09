@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .service('SelectFoodsService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID) {
+  .service('SelectFoodsService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID, successHandler) {
     this.selectFoods = function (foods) {
       var foodIds = _.map(foods, function(food) {
         return food.id;
@@ -13,6 +13,9 @@ angular.module('lbClientApp')
         data: JSON.stringify(foodIds)
       }).
         success(function (data) {
+          if (successHandler) {
+            successHandler.call();
+          }
           console.log(status, data);
         }).
         error(function (data) {

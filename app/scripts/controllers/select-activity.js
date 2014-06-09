@@ -7,6 +7,6 @@ angular.module('lbClientApp')
     this.initialize(GetActivitiesServiceData);
 
     $scope.send = function (selectedActivities) {
-      SelectActivitiesService.selectActivities(selectedActivities);
+      SelectActivitiesService.selectActivities(selectedActivities, $scope.removeSelection);
     };
   });

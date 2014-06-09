@@ -7,6 +7,6 @@ angular.module('lbClientApp')
     this.initialize(GetDrinksServiceData);
 
     $scope.send = function (selectedDrinks) {
-      SelectDrinksService.selectDrinks(selectedDrinks);
+      SelectDrinksService.selectDrinks(selectedDrinks, $scope.removeSelection);
     };
   });

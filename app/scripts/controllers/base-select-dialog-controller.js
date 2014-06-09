@@ -51,6 +51,16 @@ angular.module('lbClientApp')
       $scope.isInputValid = false;
     };
 
+    $scope.removeSelection = function() {
+      function process(item) {
+        item.selected = false;
+      }
+
+      _.each($scope.all, process);
+      _.each($scope.frequent, process);
+      _.each($scope.recent, process);
+    };
+
     $scope.doneButtonHandler = function() {
       $scope.send(
         _.chain($scope.selectedProvider)
