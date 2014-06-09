@@ -19,13 +19,13 @@ angular.module('lbClientApp')
         notifyIfReady();
       });
 
-      $http.get(SERVER_ADDRESS + 'drinks/list/recent' + CURRENT_USER_ID).success(function(data) {
+      $http.get(SERVER_ADDRESS + 'drinks/list/recent/' + CURRENT_USER_ID).success(function(data) {
         counter++;
         result.recent = data;
         notifyIfReady();
       });
 
-      $http.get(SERVER_ADDRESS + 'drinks/list/frequent' + CURRENT_USER_ID).success(function(data) {
+      $http.get(SERVER_ADDRESS + 'drinks/list/frequent/' + CURRENT_USER_ID).success(function(data) {
         counter++;
         result.frequent = data;
         notifyIfReady();
