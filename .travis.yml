@@ -7,3 +7,12 @@ before_script:
 cache:
   directories:
     - node_modules
+notifications:
+  email:
+    - hristozov@gmail.com
+    - ikopanov@gmail.com
+    - bnpavlov@gmail.com
+    - stoyan.e.stoyanov@gmail.com
+    - mitet0bvl@gmail.com
+    - veselin.istatkov@gmail.com
+    - metodi.z.manolov@gmail.com
