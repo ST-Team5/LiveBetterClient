@@ -103,6 +103,10 @@ angular
           ]
         }
       })
+      .when('/statistics', {
+        templateUrl: 'views/statistics.html',
+        controller: 'StatCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
