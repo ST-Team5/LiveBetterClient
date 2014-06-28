@@ -1,0 +1,41 @@
+<div ng-include src="'views/header.html'"></div>
+<link rel="stylesheet" href="styles/main-page.css">
+<link rel="stylesheet" href="styles/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+
+<div class="landingPage">
+    <div class="factBox">
+        <div class="headerText">
+            {{targetTimestamp | date: 'EEEE d MMMM, yyyy'}}
+        </div>
+        <br/>
+
+        <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all"
+             role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35">
+            <div class="ui-progressbar-value ui-widget-header ui-corner-left"
+                 ng-style="progressBarStyle"></div>
+        </div>
+        <div id="progressbarText">
+            <span id="progress">0 500 1000 1500 2000</span>
+        </div>
+        <br/>
+        <br/>
+
+        <div class="box">
+            Cals consumed <br/>
+            <span>{{caloriesConsumed}}</span>
+        </div>
+        <div class="box">
+            Cals burned <br/>
+            <span>{{caloriesBurned}}</span>
+        </div>
+        <div class="box">
+            Cals remaining <br/>
+            <span>{{caloriesRemaining}}</span>
+        </div>
+        <div class="box">Minutes exercised <br/>
+            <span>{{minutesExercised}}</span>
+        </div>
+    </div>
+</div>
+
+<div ng-include src="'views/footer.html'"></div>
