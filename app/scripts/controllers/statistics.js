@@ -1,4 +1,5 @@
 'use strict';
+/* jshint ignore:start */
 
 angular.module('lbClientApp')
 .controller('StatCtrl', function ($scope, $controller, $http, $rootScope, SERVER_ADDRESS) {
