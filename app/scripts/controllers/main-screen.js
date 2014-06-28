@@ -14,6 +14,6 @@ angular.module('lbClientApp')
     $scope.targetTimestamp = MainScreenData.timestamp;
     $scope.caloriesConsumed = MainScreenData.caloriesConsumed;
     $scope.caloriesBurned = MainScreenData.caloriesBurned;
-    $scope.caloriesRemaining = MainScreenData.caloriesRemaining;
+    $scope.caloriesRemaining = Math.max(0, MainScreenData.caloriesRemaining);
     $scope.minutesExercised = MainScreenData.minutesExercised;
   });
