@@ -158,8 +158,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
-            // Commented out by Georgi, breaks asset URLs if the build is not in the sub-domain root.
-//            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
@@ -353,7 +352,7 @@ module.exports = function (grunt) {
           remote: 'git@github.com:ST-Team5/LiveBetterClient.git',
           branch: 'gh-pages'
         }
-      },
+      }
     }
   });
 
