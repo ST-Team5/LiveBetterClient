@@ -65,6 +65,10 @@ angular
           ]
         }
       })
+      .when('/main-screen', {
+        templateUrl: 'views/main-screen.html',
+        controller: 'MainScreenCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
