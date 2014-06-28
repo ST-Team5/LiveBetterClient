@@ -69,6 +69,10 @@ angular
         templateUrl: 'views/main-screen.html',
         controller: 'MainScreenCtrl'
       })
+      .when('/main-screen/:date', {
+        templateUrl: 'views/main-screen.html',
+        controller: 'MainScreenCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
