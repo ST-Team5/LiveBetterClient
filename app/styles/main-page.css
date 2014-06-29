@@ -63,3 +63,10 @@ span#progress {
   font-size: 18px;
   text-align: right;
 }
+
+#main-screen-picker {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:286px;
+}
