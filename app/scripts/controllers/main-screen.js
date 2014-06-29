@@ -16,8 +16,8 @@ angular.module('lbClientApp')
     $scope.selectedDate = new Date(MainScreenData.timestamp);
 
     $scope.$watch('selectedDate', function (newDate, oldDate) {
-      if (oldDate && newDate && newDate.getTime() != oldDate.getTime()) {
-        $location.path("main-screen/" + $filter('date')(newDate, "yyyyMMdd"));
+      if (oldDate && newDate && newDate.getTime() !== oldDate.getTime()) {
+        $location.path('main-screen/' + $filter('date')(newDate, 'yyyyMMdd'));
       }
     }, true);
 
