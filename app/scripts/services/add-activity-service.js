@@ -1,4 +1,5 @@
 'use strict';
+/* jshint ignore:start */
 
 angular.module('lbClientApp')
   .service('ActivityService', function ($http, $q ,SERVER_ADDRESS) {
