@@ -1,31 +1,35 @@
-<div ng-include src="'views/header.html'"></div>
-<div class="row marketing">
-    <div class="ht">
-            Add new activity...
+<div ng-include="'views/header.html'"></div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 well bs-component">
+        <fieldset>
+            <legend>Add New Activity</legend>
+
+            <form class="form-horizontal">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <input id="activity-name" class="form-control" ng-model="newActivity.name" type="text" placeholder="Activity Name..." required>
+                    </div>
+                    <h3> Burned calories per 1 hour</h3>
+                    <div class="form-group">
+                        <input id="activity-type" class="form-control" ng-model="newActivity.type" type="text" placeholder="Type..." required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <input id="activity-calories" class="form-control" ng-model="newActivity.calories" type="number" min="0" max="100000" required placeholder="Calories...">
+                    </div>
+                    <button type="button" id="submitActivity" class="doneButton btn btn-success btn-lg btn-block"
+                            ng-disabled="!newActivity.name || !newActivity.type || !newActivity.calories"
+                            data-ng-click="insertActivity()">
+                        Done
+                    </button>
+                </div>
+
+            </form>
+        </fieldset>
     </div>
-	<div class="headers" style="width: 464px; height: 40px">
-		<h3> Details</h3>
-	</div>
-    <form role="form">
-	<div class="col-md-8">
-            <div class="form-group" style="width: 464px; height: 55px">
-                <input id="activity-name" class="form-control" ng-model="newActivity.name" type="text" placeholder="Activity Name..." required>
-            </div>
-			<h3> Burned calories per 1 hour</h3>
-            <div class="form-group" style="width: 464px; height: 55px">
-                <input id="activity-type" class="form-control" ng-model="newActivity.type" type="text" placeholder="Type..." required>
-            </div>
-            <div class="form-group" style="width: 464px; height: 55px">
-                <input id="activity-calories" class="form-control" ng-model="newActivity.calories" type="number" min="0"  max = "100000" required placeholder="Calories...">
-            </div>
 
-     </div>
-    <br/> <br/>
-    </form>
-	<br /> <br /> <br />
+
 </div>
-<button type="button"  id="submitActivity" class="btn btn-default" 
-ng-disabled="!newActivity.name || !newActivity.type || !newActivity.calories" 
-data-ng-click="insertActivity()">Done</button>
-
-<div ng-include src="'views/footer.html'"></div>
+<div ng-include="'views/footer.html'"></div>
