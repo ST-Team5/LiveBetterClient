@@ -353,9 +353,30 @@ module.exports = function (grunt) {
           branch: 'gh-pages'
         }
       }
+    },
+
+    /*
+      Fixes a problem when deploying to subdirectories, since usemin puts "/images" in asset references.
+     */
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            {
+              match: /url\(\/images/,
+              replacement: 'url(../images'
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            src: ['dist/styles/*.css']
+          }
+        ]
+      }
     }
   });
-
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -399,7 +420,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace:dist'
   ]);
 
   grunt.registerTask('default', [
