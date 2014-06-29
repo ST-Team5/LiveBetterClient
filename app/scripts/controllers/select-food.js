@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('SelectFoodCtrl', function ($scope, $controller, GetFoodServiceData, SelectFoodsService) {
+  .controller('SelectFoodCtrl',
+  function ($scope, $controller, GetFoodServiceData, SelectFoodsService) {
     angular.extend(this, $controller('BaseSelectCtrl', {$scope: $scope}));
+
+    $scope.quantityLabel = 'Quantity (grams)';
+    $scope.defaultQuantity = 100;
 
     this.initialize(GetFoodServiceData);
 

@@ -3,14 +3,17 @@
 angular.module('lbClientApp')
   .service('SelectDrinksService', function ($http, SERVER_ADDRESS, CURRENT_USER_ID) {
     this.selectDrinks = function (drinks, successHandler) {
-      var drinksIds = _.map(drinks, function(drink) {
-        return drink.id;
+      var drinkData = _.map(drinks, function(drink) {
+        return {
+          id: drink.id,
+          quantity: drink.quantity
+        };
       });
       $http({
         method: 'POST',
         url: SERVER_ADDRESS + 'drinks/' + CURRENT_USER_ID,
         contentType: 'application/json',
-        data: JSON.stringify(drinksIds)
+        data: JSON.stringify(drinkData)
       }).
         success(function (data) {
           if (successHandler) {

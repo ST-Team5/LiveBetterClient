@@ -1,4 +1,3 @@
-
 <div class="select-dialog-checkbox-holder"
      ng-repeat="item in selectedProvider">
     <input id="{{'checkbox' + item.data.id}}"
@@ -9,4 +8,16 @@
            ng-change="invalidateInput()"/>
     <label class="css-label select-dialog-label"
            for="{{'checkbox' + item.data.id}}">{{item.data.name}}</label>
+
+    <div class="quantityGroup"
+         ng-show="item.selected">
+        <span>{{quantityText}}</span>
+        <div class="input-group">
+            <input type="number" class="form-control"
+                   ng-model="item.quantity">
+            <span class="input-group-addon">.00</span>
+
+        </div>
+    </div>
+
 </div>

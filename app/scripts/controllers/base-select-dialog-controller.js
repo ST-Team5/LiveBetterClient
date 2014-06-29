@@ -1,19 +1,21 @@
 'use strict';
 
 angular.module('lbClientApp')
-  .controller('BaseSelectCtrl', function($scope, $controller) {
+  .controller('BaseSelectCtrl', function ($scope, $controller) {
     angular.extend(this, $controller('BaseCtrl', {
       $scope: $scope
     }));
 
-    this.initialize = function(data) {
+    this.initialize = function (data) {
       function transform(rawItem) {
         var result = {
           selected: false,
-          data: rawItem
+          data: rawItem,
+          quantity: $scope.defaultQuantity
         };
         return result;
       }
+
       $scope.all = _.map(data.all, transform);
       $scope.recent = _.map(data.recent, transform);
       $scope.frequent = _.map(data.frequent, transform);
@@ -24,19 +26,19 @@ angular.module('lbClientApp')
     $scope.all = [];
     $scope.frequent = [];
 
-    $scope.frequentSelected = function() {
+    $scope.frequentSelected = function () {
       $scope.selectedProvider = $scope.frequent;
     };
 
-    $scope.recentSelected = function() {
+    $scope.recentSelected = function () {
       $scope.selectedProvider = $scope.recent;
     };
 
-    $scope.allSelected = function() {
+    $scope.allSelected = function () {
       $scope.selectedProvider = $scope.all;
     };
 
-    $scope.invalidateInput = function() {
+    $scope.invalidateInput = function () {
       var provider = $scope.selectedProvider;
       if (!provider) {
         $scope.isInputValid = false;
@@ -51,7 +53,7 @@ angular.module('lbClientApp')
       $scope.isInputValid = false;
     };
 
-    $scope.removeSelection = function() {
+    $scope.removeSelection = function () {
       function process(item) {
         item.selected = false;
       }
@@ -61,16 +63,18 @@ angular.module('lbClientApp')
       _.each($scope.recent, process);
     };
 
-    $scope.doneButtonHandler = function() {
+    $scope.doneButtonHandler = function () {
       $scope.send(
         _.chain($scope.selectedProvider)
-        .filter(function(item) {
-          return item.selected;
-        })
-        .map(function(item) {
-          return item.data;
-        })
-        .value());
+          .filter(function (item) {
+            return item.selected;
+          })
+          .map(function (item) {
+            var data = _.clone(item.data);
+            data.quantity = item.quantity / $scope.defaultQuantity;
+            return data;
+          })
+          .value());
     };
 
     $scope.$watch('selectedProvider', $scope.invalidateInput());
