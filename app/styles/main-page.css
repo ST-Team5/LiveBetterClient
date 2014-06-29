@@ -8,8 +8,8 @@ div.landingPage {
 }
 
 div.factBox {
-  width: 450px;
-  height: 400px;
+  max-width: 450px;
+  /*height: 400px;*/
   opacity: 0.7;
   filter: alpha(opacity=60); /* For IE8 and earlier */
   background: #ffffff;
@@ -48,7 +48,7 @@ div.box {
 
 #progressbar {
   margin: auto;
-  width: 400px;
+  /*width: 400px;*/
   height: 27px;
 }
 
@@ -59,7 +59,7 @@ div.box {
 }
 
 span#progress {
-  word-spacing: 1.2em;
-  font-size: 27px;
+  word-spacing: 1em;
+  font-size: 18px;
   text-align: right;
 }
