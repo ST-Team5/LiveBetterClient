@@ -17,19 +17,19 @@
                         <label for="activity-calories"> Lightly active </label>
                         <input id="activity-calories" class="form-control" ng-model="newActivity.calories.lightly" type="number" min="0" max="100000" required placeholder="Calories...">
                     </div>
-                    <span>{{ newActivity.calories.lightly }}</span>
+                    
                     <div class="form-group">
                         <label for="activity-calories"> Moderate active </label>
                         <input id="activity-calories" class="form-control" ng-model="newActivity.calories.moderate" type="number" min="0" max="100000" required placeholder="Calories...">
                     </div>
-                    <span>{{ newActivity.calories.moderate}}</span>
+                    
                     <div class="form-group">
                         <label for="activity-calories"> Very active </label>
                         <input id="activity-calories" class="form-control" ng-model="newActivity.calories.veryActive" type="number" min="0" max="100000" required placeholder="Calories...">
                     </div>
-                    <span> {{newActivity.calories.veryActive }}</span>
+                   
                     <button type="button" id="submitActivity" class="doneButton btn btn-success btn-lg btn-block"
-                            ng-disabled="!newActivity.name"
+                            ng-disabled="!newActivity.name || !newActivity.calories.veryActive || !newActivity.calories.moderate || !newActivity.calories.lightly"
                             data-ng-click="insertActivity()">
                         Done
                     </button>
