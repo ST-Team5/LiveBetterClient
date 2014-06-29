@@ -17,7 +17,10 @@ angular.module('lbClientApp')
 
     $scope.$watch('selectedDate', function (newDate, oldDate) {
       if (oldDate && newDate && newDate.getTime() !== oldDate.getTime()) {
-        $location.path('main-screen/' + $filter('date')(newDate, 'yyyyMMdd'));
+        $scope.showPicker = false;
+        setTimeout(function () {
+          $location.path('main-screen/' + $filter('date')(newDate, 'yyyyMMdd'));
+        }, 200);
       }
     }, true);
 

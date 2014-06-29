@@ -1,10 +1,12 @@
 <div ng-include="'views/header.html'"></div>
 
 <div collapse="!showPicker"
-     class="well well-sm">
+     class="well well-sm"
+     ng-click="showPicker = false">
     <datepicker id="main-screen-picker"
                 ng-model="selectedDate"
                 max-date="today"
+                ng-click="$event.stopPropagation()"
                 show-weeks="true"></datepicker>
 </div>
 

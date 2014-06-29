@@ -86,7 +86,7 @@ angular
                 var result = new Date();
                 var dateParameter = $route.current.params.date;
                 if (dateParameter) {
-                  if (!dateParameter.match(/20\d\d(0|1)\d(1\d|2\d|3(0|1))/g)) {
+                  if (!dateParameter.match(/20\d\d(0|1)\d(0\d|1\d|2\d|3(0|1))/g)) {
                     throw new Error('Invalid date provided.');
                   }
 

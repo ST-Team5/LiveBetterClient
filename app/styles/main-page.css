@@ -22,6 +22,7 @@ body {
 }
 
 div.headerText {
+  cursor: pointer;
   text-align: center;
   padding-top: 8px;
   font-size: 35px;
