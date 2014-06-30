@@ -17,7 +17,7 @@ Prepare your development environment
 1. Install grunt globally: `npm install -g grunt grunt-cli`
 1. `cd` to the directory of this project
 1. Run `npm install` in the directory of this project to install all dependencies.
-1. (_Optional, if something breaks later_) Run `bower install`
+1. Run `bower install`
 
 Run a local webserver for development
 -------------------------------------
@@ -31,7 +31,8 @@ You may use [the different goodies](https://github.com/yeoman/generator-angular)
 
 Deploy to GitHub pages
 ----------------------
-1. Verify that everything is OK (building the project with `grunt` passes, just seeing your changes with `grunt server` is **not** enough). Commit and push all your changes.
+1. Commit and push your changes.
+1. Verify that everything is OK and build the project with `grunt`.
 1. Run `grunt buildcontrol:pages`. It will automatically push the changes to GitHub pages.
 1. Open https://st-team5.github.io/LiveBetterClient/ to verify that everything is OK there as well.
 
